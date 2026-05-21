@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logoImg from "../assets/logo.png";
 
+<<<<<<< HEAD
 const Navbar = ({ activeLink, setActiveLink }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -11,6 +12,18 @@ const Navbar = ({ activeLink, setActiveLink }) => {
   { id: "cursos", label: "Cursos", icon: "fas fa-book-open" },
   { id: "contacto", label: "Contacto", icon: "fas fa-phone-alt" },
 ];
+=======
+const Navbar = () => {
+  const [activeLink, setActiveLink] = useState("inicio");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { id: "inicio", label: "Inicio", icon: "fas fa-home" },
+    { id: "cursos", label: "Cursos", icon: "fas fa-book-open" },
+    { id: "especializaciones", label: "Especializaciones", icon: "fas fa-certificate" },
+    { id: "contacto", label: "Contacto", icon: "fas fa-phone-alt" },
+  ];
+>>>>>>> ebf52ee0999e8c8107f21491b7397e527d239eac
 
   return (
     <>

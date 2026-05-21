@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 // App.jsx
+=======
+>>>>>>> ebf52ee0999e8c8107f21491b7397e527d239eac
 import { useState, useEffect } from 'react';
 import AlumnoCard from "./components/AlumnoCard";
 import Navbar from "./components/Navbar";
 import Contador from "./components/Contador";
 import AlumnoForm from "./components/AlumnoForm";
+<<<<<<< HEAD
 import ProfesorForm from "./components/ProfesorForm";
 import ProfesorCard from "./components/ProfesorCard";
 import CursoForm from "./components/CursoForm";
@@ -15,6 +19,10 @@ function App() {
   // 👇 PASO 1: Estado de conteos agregado aquí
   const [conteos, setConteos] = useState({ alumnos: 0, profesores: 0, cursos: 0 });
 
+=======
+
+function App() {
+>>>>>>> ebf52ee0999e8c8107f21491b7397e527d239eac
   const [alumnos, setAlumnos] = useState([
     { id_alumno: 1, nombre: "James", apellidos: "Rojas", email: "james@senati.pe", estado_matricula: "Inactivo" },
     { id_alumno: 2, nombre: "Tifanny", apellidos: "Ramos", email: "tifanny@senati.pe", estado_matricula: "Matriculado" },
@@ -24,8 +32,11 @@ function App() {
     { id_alumno: 6, nombre: "Harol", apellidos: "Hernandez", email: "harol@senati.pe", estado_matricula: "Inactivo" },
     { id_alumno: 7, nombre: "Tifa", apellidos: "Ramos", email: "tifa@senati.pe", estado_matricula: "Matriculado" },
   ]);
+<<<<<<< HEAD
   const [profesores, setProfesores] = useState([]);
   const [cursos, setCursos] = useState([]);
+=======
+>>>>>>> ebf52ee0999e8c8107f21491b7397e527d239eac
 
   const obtenerAlumnos = async () => {
     try {
@@ -39,6 +50,7 @@ function App() {
     }
   };
 
+<<<<<<< HEAD
   const obtenerProfesores = async () => {
     try {
       const res = await fetch('http://127.0.0.1:8000/api/profesores');
@@ -266,6 +278,29 @@ function App() {
       <Navbar activeLink={activeLink} setActiveLink={setActiveLink} />
       <div className="container">
         {renderPage()}
+=======
+  useEffect(() => {
+    obtenerAlumnos();
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <div className="container mt-4">
+        <h1 className="mb-4">Listado de Alumnos</h1>
+        <Contador />
+        <AlumnoForm recargarAlumnos={obtenerAlumnos} />
+        <div className="row mt-4">
+          {alumnos.map((alumno) => (
+            <AlumnoCard
+              key={alumno.id_alumno}
+              nombre={`${alumno.nombre} ${alumno.apellidos}`}
+              carrera={alumno.email}
+              estadoInicial={alumno.estado_matricula}
+            />
+          ))}
+        </div>
+>>>>>>> ebf52ee0999e8c8107f21491b7397e527d239eac
       </div>
     </>
   );
